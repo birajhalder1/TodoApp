@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node server.js",
     "server": "nodemon server.js",
-    "start": "cd backend && npm install && node server.js",
+    "start": "npm install && node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Biraj Halder",
