@@ -2,8 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
-//const path = require("path");
+const cors = require("cors");
+const path = require("path");
 
 // dotenv configuration
 require("dotenv").config();
@@ -31,6 +31,24 @@ mongoose
 
 // Middleware Use admin Routes
 app.use("/api/todo", todos);
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header(
+  "Access-Control-Allow-Headers",
+  "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+  });
+  app.options("*", cors());
+
+/*Adds the react production build to serve react requests*/
+app.use(express.static(path.join(__dirname, "../client/build")));
+/*React root*/
+app.get("*", (req, res) => {
+res.sendFile(path.join(__dirname + "../client/build/index.html"));
+});
 
 const port = process.env.PORT || 5000;
 
