@@ -1,0 +1,26 @@
+.nav-item {
+  color: brown;
+  font-size: 34;
+}
+.txt2 {
+  margin-top: 5px;
+  text-align: center;
+}
+.txt3 {
+  color: deeppink;
+  padding-top: 20px;
+}
+.reg {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.log {
+  margin-top: 100px;
+}
+.align_right {
+  text-align: right;
+  text-decoration-color: brown;
+}
+.btn_style {
+  background-color: rgb(122, 183, 218);
+}
